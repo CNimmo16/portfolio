@@ -1,103 +1,127 @@
+import { Mail, Linkedin, Github, Blocks } from "lucide-react";
 import Image from "next/image";
+import profilePic from "./me.jpg";
+
+const links = [
+  {
+    href: "mailto:cameronnimmo@hotmail.co.uk",
+    icon: <Mail className="text-inherit" />,
+  },
+  {
+    href: "https://www.linkedin.com/in/cameron-nimmo/",
+    icon: <Linkedin className="text-inherit" />,
+  },
+  {
+    href: "https://github.com/cnimmo16",
+    icon: <Github className="text-inherit" />,
+  },
+];
+
+const experience = [
+  {
+    title: "Machine Learning Engineer",
+    company: {
+      name: "Machine Learning Institute",
+      href: "https://ml.institute/",
+    },
+    location: "London, UK",
+    date: "2025",
+    summary:
+      "I completed an intensive two-month bootcamp focused on modern machine learning. The program covered key deep learning concepts including feature fusion, multi-modal transformers, fine-tuning strategies, and reinforcement learning. In the final phase, I applied these skills to build a transformer-based recommendation system that curated RSS feeds, simulating a real-world product development cycle.",
+  },
+  {
+    title: "Senior Full Stack Engineer",
+    company: {
+      name: "Blackbullion",
+      href: "https://blackbullion.com/",
+    },
+    location: "Hybrid",
+    date: "2021 - 2024",
+    summary:
+      "As the lead developer on the platform squad, I managed a team of mid-level engineers and spearheaded several high-impact projects. I architected a robust data pipeline for client-facing analytics dashboards, integrating Kafka, Debezium, and Clickhouse, and deploying a custom admin UI on AWS. I mentored two frontend developers into full-stack roles and introduced an open banking integration that reduced applicant-reviewer communication by 35% per application.",
+  },
+  {
+    title: "Web Developer",
+    company: {
+      name: "Calibrate Consulting",
+      href: "https://calibrateconsulting.com/",
+    },
+    location: "London, UK",
+    date: "2019 - 2021",
+    summary:
+      "At Calibrate Consulting, I launched and ran a junior web developer training program, helping early-career talent transition into capable frontend engineers within months. I also led the frontend development of complex analytics dashboards for a global bank, collaborating closely with data analysts and integrating Qlik-based data via a JSON-RPC API.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+    <div className="flex justify-center px-5 py-5 md:py-12">
+      <div className="min-h-[90vh] max-w-[690px]">
+        <header className="mb-10 flex flex-col-reverse items-start justify-between gap-5 md:flex-row md:gap-20">
+          <div>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+              Cameron Nimmo
+            </h1>
+            <p className="mb-2.5 text-lg">
+              Generalist Full Stack Engineer with 5+ years of experience
+            </p>
+            <div className="text-neutral mb-4 text-lg">London, UK</div>
+            <div className="flex gap-2">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:border-primary border-primary-light hover:text-primary-dark rounded-md border p-1.5 transition-all"
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </div>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={profilePic}
+            alt="Cameron Nimmo"
+            className="aspect-square h-auto w-30 rounded-2xl object-cover md:w-40"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </header>
+        <main>
+          <section className="mb-9">
+            <h2 className="mb-3 text-2xl font-bold uppercase">About me</h2>
+            <p className="text-lg">
+              A generalist full stack engineer with a pragmatic approach to
+              delivery and a focus on maintainability. Praised for my
+              leadership, communication and mentoring skills, as well as my
+              strong understanding of commercial concerns and user needs.
+              Building products that deliver real value to real people.
+            </p>
+          </section>
+          <section className="mb-8">
+            <h2 className="mb-5 text-2xl font-bold uppercase">Experience</h2>
+            {experience.map((exp) => (
+              <article key={exp.title} className="mb-7">
+                <header className="mb-2 flex flex-col-reverse justify-between md:flex-row">
+                  <h3 className="text-xl font-bold">{exp.title}</h3>
+                  <p className="text-neutral text-lg">{exp.date}</p>
+                </header>
+                <p className="mb-2 text-lg">
+                  <a
+                    href={exp.company.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-dark underline"
+                  >
+                    {exp.company.name}
+                  </a>{" "}
+                  · {exp.location}
+                </p>
+                <p className="text-neutral text-lg">{exp.summary}</p>
+              </article>
+            ))}
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
