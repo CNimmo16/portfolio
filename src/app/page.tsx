@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Blocks } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import Image from "next/image";
 import profilePic from "./me.jpg";
 
