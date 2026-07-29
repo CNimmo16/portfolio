@@ -19,6 +19,17 @@ const links = [
 
 const experience = [
   {
+    title: "Founder & CTO",
+    company: {
+      name: "Waxly",
+      href: "https://waxly.app/",
+    },
+    location: "London, UK",
+    date: "2026 - Present",
+    summary:
+      "I am the co-founder and CTO of Waxly. Waxly is a bespoke marketplace for buying and selling records. Available on Web, Android and iOS. Over 35,000+ records available for sale from independent & commercial sellers. Built from the ground up, powered by Stripe Connect.",
+  },
+  {
     title: "Machine Learning Engineer",
     company: {
       name: "Machine Learning Institute",
@@ -59,12 +70,10 @@ export default function Home() {
       <div className="min-h-[90vh] max-w-[690px]">
         <header className="mb-10 flex flex-col-reverse items-start justify-between gap-5 md:flex-row md:gap-20">
           <div>
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h1 className="mb-4 text-xl font-bold md:text-2xl">
               Cameron Nimmo
             </h1>
-            <p className="mb-2.5 text-lg">
-              Generalist Full Stack Engineer with 5+ years of experience
-            </p>
+            <p className="mb-2.5 text-4xl">Full Stack Engineer & Founder</p>
             <div className="text-neutral mb-4 text-lg">London, UK</div>
             <div className="flex gap-2">
               {links.map((link) => (
@@ -94,7 +103,8 @@ export default function Home() {
               delivery and a focus on maintainability. Praised for my
               leadership, communication and mentoring skills, as well as my
               strong understanding of commercial concerns and user needs.
-              Building products that deliver real value to real people.
+              Currently building Waxly, the new way to buy and sell records
+              online.
             </p>
           </section>
           <section className="mb-8">
@@ -103,7 +113,7 @@ export default function Home() {
               <article key={exp.title} className="mb-7">
                 <header className="mb-2 flex flex-col-reverse justify-between md:flex-row">
                   <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <p className="text-neutral text-lg">{exp.date}</p>
+                  <p className="text-lg text-neutral-700">{exp.date}</p>
                 </header>
                 <p className="mb-2 text-lg">
                   <a
@@ -116,7 +126,7 @@ export default function Home() {
                   </a>{" "}
                   · {exp.location}
                 </p>
-                <p className="text-neutral text-lg">{exp.summary}</p>
+                <p className="text-lg text-neutral-700">{exp.summary}</p>
               </article>
             ))}
           </section>
