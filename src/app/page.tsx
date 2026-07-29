@@ -113,7 +113,9 @@ export default function Home() {
               <article key={exp.title} className="mb-7">
                 <header className="mb-2 flex flex-col-reverse justify-between md:flex-row">
                   <h3 className="text-xl font-bold">{exp.title}</h3>
-                  <p className="text-lg text-neutral-700">{exp.date}</p>
+                  <p className="text-lg text-neutral-700 dark:text-neutral-200">
+                    {exp.date}
+                  </p>
                 </header>
                 <p className="mb-2 text-lg">
                   <a
@@ -126,7 +128,9 @@ export default function Home() {
                   </a>{" "}
                   · {exp.location}
                 </p>
-                <p className="text-lg text-neutral-700">{exp.summary}</p>
+                <p className="text-lg text-neutral-700 dark:text-neutral-200">
+                  {exp.summary}
+                </p>
               </article>
             ))}
           </section>
